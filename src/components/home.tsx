@@ -1,5 +1,5 @@
-import { ConnectButton } from "@mysten/dapp-kit";
-import { Box, Card, Flex, Heading } from "@radix-ui/themes";
+import { Card, Heading } from "@radix-ui/themes";
+import Nav from "./names/nav";
 
 export default function Honme() {
     const infos = [
@@ -27,16 +27,7 @@ export default function Honme() {
 
     return (
         <div className='min-h-screen w-full'>
-            <Flex
-                position="sticky" px="4" py="2" justify="between"
-                style={{ backgroundColor: "var(--gray-a2)", backdropFilter: 'blur(20px)', border: '1px solid black', width: '100%' }}>
-                <Box>
-                    <Heading>Bui</Heading>
-                </Box>
-                <Box>
-                    <ConnectButton />
-                </Box>
-            </Flex>
+            <Nav />
             <div>
             </div>
             <div className="flex flex-col justify-center h-[300px] items-center object-center object-cover text-center" style={{
@@ -68,5 +59,3 @@ export default function Honme() {
         </div>
     );
 }
-
-
