@@ -1,5 +1,6 @@
 import { Card, Heading } from "@radix-ui/themes";
 import Nav from "./names/nav";
+import Names from "./names/names";
 
 export default function Honme() {
     const infos = [
@@ -43,6 +44,8 @@ export default function Honme() {
                     </p>
                 </div>
             </div>
+            <Names />
+
             <p className={'w-full text-center text-[1.2rem] font-bold py-[30px_10px]'}> Everything you need to know</p>
             <div className={"py-[20px] px-[20px] md:px-0 gap-[20px] flex flex-wrap justify-center items-center"}>
                 {infos.map((data, index) => (<Card className={'w-[300px] max-w-[400px] md:max-w-[320px]  trasform'}>
