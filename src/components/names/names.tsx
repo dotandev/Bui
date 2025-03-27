@@ -1,6 +1,6 @@
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { motion } from "framer-motion";
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 
 const names = [
   "jesus.bui.sui",
@@ -13,7 +13,9 @@ const names = [
 ];
 
 export default function Names() {
-  const [searchTerm, setSearchTerm] = React.useState("");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState<string[]>([]);
+  const [walletConnected, setWalletConnected] = useState(false); // Example wallet state
 
   const namePositions = useMemo(() => {
     return names.map(() => ({
@@ -21,6 +23,24 @@ export default function Names() {
       left: `${Math.random() * 70 + 15}%`,
     }));
   }, []);
+
+  const handleSearch = (term: string) => {
+    setSearchTerm(term);
+    if (term) {
+      const results = names.filter((name) =>
+        name.toLowerCase().includes(term.toLowerCase())
+      );
+      setSearchResults(results);
+    } else {
+      setSearchResults([]);
+    }
+  };
+
+  const handleConnectWallet = () => {
+    // Replace with your wallet connection logic
+    setWalletConnected(true);
+    alert("Wallet Connected (Placeholder)");
+  };
 
   return (
     <div className="relative flex flex-col items-center space-y-6 p-6 h-screen w-full bg-white">
@@ -34,7 +54,7 @@ export default function Names() {
               opacity: 1,
               scale: 1.1,
               filter: "blur(0px)",
-              y: [0, -10, 10, 0], 
+              y: [0, -10, 10, 0],
             }}
             transition={{
               duration: 3,
@@ -48,7 +68,7 @@ export default function Names() {
           >
             {/* Profile Icon */}
             <img
-              src={`https://api.dicebear.com/7.x/initials/svg?seed=${name}`} 
+              src={`https://api.dicebear.com/7.x/initials/svg?seed=${name}`}
               alt="avatar"
               className="w-8 h-8 rounded-full"
             />
@@ -66,16 +86,37 @@ export default function Names() {
         </h2>
 
         {/* Search Box */}
-        <div className="relative">
-          <input
-            type="text"
-            placeholder="SEARCH FOR A NAME"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full rounded-lg border border-gray-300 px-5 py-4 text-lg focus:outline-none shadow-lg bg-white/60 backdrop-blur-xl placeholder-gray-500 text-gray-800"
-          />
-          <MagnifyingGlassIcon className="absolute right-4 top-1/2 transform -translate-y-1/2 h-6 w-6 text-gray-400" />
-        </div>
+        {walletConnected ? (
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="SEARCH FOR A NAME"
+              value={searchTerm}
+              onChange={(e) => handleSearch(e.target.value)}
+              className="w-full rounded-lg border border-gray-300 px-5 py-4 text-lg focus:outline-none shadow-lg bg-white/60 backdrop-blur-xl placeholder-gray-500 text-black"
+            />
+            <MagnifyingGlassIcon className="absolute right-4 top-1/2 transform -translate-y-1/2 h-6 w-6 text-gray-400" />
+            {searchResults.length > 0 && (
+              <ul className="absolute left-0 mt-2 w-full rounded-md bg-white shadow-lg">
+                {searchResults.map((result) => (
+                  <li
+                    key={result}
+                    className="cursor-pointer px-4 py-2 hover:bg-gray-100"
+                  >
+                    {result}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ) : (
+          <button
+            onClick={handleConnectWallet}
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Connect Wallet to Search
+          </button>
+        )}
       </div>
     </div>
   );
