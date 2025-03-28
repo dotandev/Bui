@@ -15,12 +15,12 @@ const HeadCta: React.FC = () => {
         padding: '20px',
         margin: '20px auto',
         display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)', // 3 columns
+        gridTemplateColumns: 'repeat(3, 1fr)', 
         gridGap: '15px',
         backgroundColor: '#e6f7ff',
         borderRadius: '8px',
         boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-        maxWidth: '900px', // Adjusted max width for grid
+        maxWidth: '900px', 
       }}>
         {ctaItems.map((item) => (
           <RadixNavigationMenu.Item key={item.href}>

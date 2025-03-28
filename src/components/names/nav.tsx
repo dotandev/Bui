@@ -6,9 +6,9 @@ export default function Nav() {
     <Flex
     position="sticky" px="4" py="2" justify="between"
     style={{ backgroundColor: "var(--gray-a2)", backdropFilter: 'blur(20px)', border: '1px solid black', width: '100%' }}>
-    <Box>
+    <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
         <Heading>Bui</Heading>
-    </Box>
+    </a>
     <Box>
         <ConnectButton />
     </Box>
