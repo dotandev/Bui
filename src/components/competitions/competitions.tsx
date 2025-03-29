@@ -9,7 +9,7 @@ import { AirdropEvent, HackEvent, RecentWinners } from "../../types";
 import { hacksData, airdropEvents, recentWinners } from "../../utils/index.ts";
 import { CgProfile } from "react-icons/cg";
 import { useNavigate } from 'react-router-dom'
-
+import LiveFeedUpdate from './livefeeds.tsx'
 export default function Competition() {
     const navigate = useNavigate()
     const ActiveHacks = ({ hacksData }: { hacksData: HackEvent[] }) => {
@@ -25,7 +25,7 @@ export default function Competition() {
                         hacksData.map((data, index) => (
                             <SwiperSlide key={index} className={'pb-[30px] lg:pb-[20px] px-[15px]'} style={{ backgroundColor: 'linear-gradrient(to right,#0E778F 20%, #B5F2FF 20%, #157C93 60%)' }}>
                                 <Card className={'bg-[#0E778F] text-white'}>
-                                    <div className={'w-[100%] h-[150px] border-[#0E778F] rounded-[12px] border-[1px] overflow-hidden'}>
+                                    <div className={'w-[100%] h-[100px] border-[#0E778F] rounded-[12px] border-[1px] overflow-hidden'}>
                                         <img src={data.image}
                                             className={'object-cover object-contain w-full h-full hover:scale-105 transition-all transform duration-400'}
                                             alt="hack" />
@@ -67,7 +67,7 @@ export default function Competition() {
                         airdropEvents.map((data, index) => (
                             <SwiperSlide key={index} className={'pb-[30px] lg:pb-[20px] px-[15px]'}>
                                 <Card className={'bg-[#0E778F] text-white'}>
-                                    <div className={'w-[100%] h-[150px] border-[#0E778F] rounded-[12px] border-[1px] overflow-hidden'}>
+                                    <div className={'w-[100%] h-[100px] border-[#0E778F] rounded-[12px] border-[1px] overflow-hidden'}>
                                         <img src={data.image}
                                             className={'object-cover object-contain w-full h-full hover:scale-105 transition-all transform duration-400'}
                                             alt="hack" />
@@ -97,9 +97,9 @@ export default function Competition() {
     }
     const RecentWinners = ({ winners }: { winners: RecentWinners[] }) => {
         return (
-            <div className={'flex flex-col px-[10px] rounded-1  rounded-md p-1 shadow-lg -shadow-lg'}>
+            <div className={'flex flex-col rounded-1  rounded-md p-1 shadow-lg -shadow-lg border-[1px] border-[#7CBECE]'}>
                 <Text size={'5'} className={'w-full font-bold pb-[15px]'}>Recent Winners</Text>
-                <div className='flex flex-wrap justify-around gap-y-[20px] h-[250px] overflow-y-auto'>
+                <div className='flex flex-wrap justify-around gap-y-[20px] h-[230px] overflow-y-auto border-[1px] border-[#7CBECE] p-1 rounded-[8px]'>
                     {winners.map((data, index) => (
                         <div className={'shadow-lg hover:scale-101 hover:-skew-y-[1deg] backdrop-blur-[10px] transform duration-200 flex flex-col gap-[10px] border-[1px] text-start items-center border-[#0E778F] p-1 rounded-[10px] w-[300px]'}>
                             <div key={index} className={'flex gap-[10px] justify-start hover:cursor-pointer items-center w-full'}
@@ -120,41 +120,22 @@ export default function Competition() {
                 </div>
             </div>
         )
-    }
-    const LiveUpdates = () => {
-        return (
-            <div className={'flex flex-col px-[10px] rounded-1  rounded-md p-1 shadow-lg -shadow-lg'}>
-                <Text size={'5'} className={'w-full font-bold pb-[15px]'}>Live Updates</Text>
-                <div className="relative h-[200px] overflow-hidden">
-                    <div className={``}>
-                        <div className="p-2 text-white rounded-md">Update 1</div>
-                        <div className="p-2 text-white rounded-md">Update 2</div>
-                        <div className="p-2 text-white rounded-md">Update 3</div>
-                        <div className="p-2 text-white rounded-md">Update 4</div>
-                        <div className="p-2 text-white rounded-md">Update 1</div>
-                        <div className="p-2 text-white rounded-md">Update 2</div>
-                        <div className="p-2 text-white rounded-md">Update 3</div>
-                        <div className="p-2 text-white rounded-md">Update 4</div>
-                    </div>
-                </div>
-            </div>
-        )
-    }
+    }      
     return (
         <div className={'bg-cover bg-contain bg-center text-[#0E778F] min-h-screen'} style={{
             backdropFilter: 'blur(10px)',
             backgroundImage: `url('/bui.png')`
         }}>
-            <Nav />
-            <div className={'w-full flex-col lg:flex-row flex gap-[20px] px-2 py-2'}>
+            <Nav color={'white'} background="black"/>
+            <div className={'w-full flex-col lg:flex-row flex gap-[20px] px-2 py-[8px]'}>
                 <div className={'flex flex-col px-[10px] rounded-1  rounded-md p-1 shadow-lg -shadow-lg'}>
                     <ActiveHacks hacksData={hacksData} />
                     <Bounties airdropEvents={airdropEvents} />
                 </div>
-                <Card>
+                <div className={'flex flex-col px-[10px] rounded-1 rounded-md p-1 shadow-lg gap-[10px]'}>
                     <RecentWinners winners={recentWinners} />
-                    <LiveUpdates />
-                </Card>
+                    <LiveFeedUpdate/>
+                </div>
             </div>
 
         </div>
