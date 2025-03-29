@@ -1,16 +1,8 @@
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { motion } from "framer-motion";
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
+import { names } from "../../utils";
 
-const names = [
-  "jesus.bui.sui",
-  "fuhad.bui.sui",
-  "biokes.bui.sui",
-  "dotannddev.bui.sui",
-  "aliphatic.bui.sui",
-  "bui.bui.sui",
-  "funahhh.bui.sui",
-];
 
 export default function Names() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -18,7 +10,7 @@ export default function Names() {
   const [walletConnected, setWalletConnected] = useState(false); // Example wallet state
 
   const namePositions = useMemo(() => {
-    return names.map(() => ({
+    return names.names.map(() => ({
       top: `${Math.random() * 60 + 20}%`,
       left: `${Math.random() * 70 + 15}%`,
     }));
@@ -27,7 +19,7 @@ export default function Names() {
   const handleSearch = (term: string) => {
     setSearchTerm(term);
     if (term) {
-      const results = names.filter((name) =>
+      const results = names.names.filter((name) =>
         name.toLowerCase().includes(term.toLowerCase())
       );
       setSearchResults(results);
@@ -46,7 +38,7 @@ export default function Names() {
     <div className="relative flex flex-col items-center space-y-6 p-6 h-screen w-full bg-white">
       {/* Floating Sui Names */}
       <div className="absolute inset-0 flex justify-center items-center">
-        {names.map((name, index) => (
+        {names.names.map((name, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, scale: 0.6, filter: "blur(10px)" }}

@@ -1,12 +1,13 @@
 import React from 'react';
 
-const Footer: React.FC = () => {
+const Footer: React.FC = ({ color, background }: {color?:string, background?:string}) => {
   return (
     <footer style={{
-      backgroundColor: '#f0f0f0', // Light grey background
+      backgroundColor: background??'#f0f0f0',
       padding: '40px 20px',
       marginTop: '40px',
       borderTop: '1px solid #e0e0e0',
+      color:color??'black'
     }}>
       <div style={{
         maxWidth: '1200px',

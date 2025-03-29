@@ -1,13 +1,10 @@
 import { useRoutes } from "react-router-dom";
-import Home from "./components/home";
+
+import { ROUTES } from "./routes/routes.";
 
 function App() {
-  const router = [
-    {path:'/', element:<Home/>},
-  ]
-
   return (
-    useRoutes(router)
+    useRoutes(ROUTES)
   )
 }
 
