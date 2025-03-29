@@ -1,6 +1,7 @@
 import Explorer from "../components/explorer/explorer";
 import Home from "../components/home";
 import Competition from "../components/competitions/competitions.tsx";
+import Hackathon from "../components/competitions/hackathonSubscription.tsx";
 
 export const ROUTES = [
     {
@@ -18,5 +19,9 @@ export const ROUTES = [
     {
         path:'/competitions',
         element:<Competition/>
+    },
+    {
+        path: "/hacks/:hackId",
+        element:<Hackathon/>
     }
 ]

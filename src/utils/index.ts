@@ -257,9 +257,9 @@ export const faqData: FaqData[] = [
 
 export const cards: Cards[] = [
     {
-        imageURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTahpRIkAr_gOxjVkKcKoeHjvnD8Dj5PimGjA&s',
+        imageURL: '/subscribe.jpg',
         text: 'Participate in a Competition',
-        link: '/participate'
+        link: '/competitions'
     },
     {
         imageURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwWDJRMnw1dFmYRtaLGE72rbThuWd2CsBnSQ&s',

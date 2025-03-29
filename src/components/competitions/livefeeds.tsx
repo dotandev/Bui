@@ -28,7 +28,7 @@ export default function LiveUpdateFeed() {
         localStorage.setItem("liveUpdates", JSON.stringify(newUpdates));
         return newUpdates;
       });
-    }, 3000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, []);

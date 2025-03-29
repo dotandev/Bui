@@ -40,7 +40,7 @@ export default function Competition() {
                                                 <Text size={"1"}>Deadline : {data.deadline}</Text>
                                             </div>
                                         </Card>
-                                        <button
+                                        <button onClick={() => { navigate('/hacks/:11')}}
                                             className={'text-[0.5rem] border-[1px] border-gray-800 w-[130px] h-[27px] cursor-pointer bg-[#0E778F] rounded-[10px] hover:bg-gray-500 transition transform duration-400'}>
                                             Join
                                         </button>
@@ -101,8 +101,8 @@ export default function Competition() {
                 <Text size={'5'} className={'w-full font-bold pb-[15px]'}>Recent Winners</Text>
                 <div className='flex flex-wrap justify-around gap-y-[20px] h-[230px] overflow-y-auto border-[1px] border-[#7CBECE] p-1 rounded-[8px]'>
                     {winners.map((data, index) => (
-                        <div className={'shadow-lg hover:scale-101 hover:-skew-y-[1deg] backdrop-blur-[10px] transform duration-200 flex flex-col gap-[10px] border-[1px] text-start items-center border-[#0E778F] p-1 rounded-[10px] w-[300px]'}>
-                            <div key={index} className={'flex gap-[10px] justify-start hover:cursor-pointer items-center w-full'}
+                        <div  key={index} className={'shadow-lg hover:scale-101 hover:-skew-y-[1deg] backdrop-blur-[10px] transform duration-200 flex flex-col gap-[10px] border-[1px] text-start items-center border-[#0E778F] p-1 rounded-[10px] w-[300px]'}>
+                            <div className={'flex gap-[10px] justify-start hover:cursor-pointer items-center w-full'}
                                 onClick={() => { navigate('/explorer/CryptoSecGuy') }}>
                                 <CgProfile size={20} />
                                 <p>@{data.username}</p>
