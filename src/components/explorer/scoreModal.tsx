@@ -3,10 +3,10 @@ export default function ScoreModal({isOpen,score, onClose}:{isOpen:boolean, scor
         <div className={`${!isOpen?"hidden":"fixed inset-0 flex items-center justify-center bg-black/60 bg-opacity-50"}`}>
             <div className={"fixed inset-0 flex w-screen justify-center md:p-4 items-center  text-gray-900"}>
                 <div>
-                    <div className={`md:border-gray-40/20 flex h-screen max-h-[410px] rounded-[20px] overflow-y-scroll md:h-full w-full flex-col gap-4 md:rounded-3xl md:border
+                    <div className={`md:border-gray-40/20 flex h-screen h-[300px] rounded-[20px]  md:h-full w-full flex-col gap-4 md:rounded-3xl md:border
                      bg-white p-6 md:p-10 shadow-lg sm:h-auto  max-w-[350px]`}>
                         <div className={"flex justify-end"}>
-                            <button type="button" className={"ml-auto text-xl text-[#0A0B0D]"} onClick={function (){onClose()}}>
+                            <button type="button" className={"ml-auto text-xl text-[#0A0B0D] hover:bg-gray-300 rounded-[50%]  p-2"} onClick={function (){onClose()}}>
                                 <svg width="14" height="14" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
                                           clip-rule="evenodd" d="M2.82845 0.272185L25.4559 22.8996L22.6274 25.728L2.28882e-05 3.10061L2.82845 0.272185Z"

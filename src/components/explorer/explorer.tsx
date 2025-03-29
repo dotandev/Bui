@@ -9,7 +9,8 @@ import { FaXTwitter, FaDiscord, FaTelegram } from "react-icons/fa6";
 import {UserData} from "../../types";
 import ScoreModal from "./scoreModal.tsx";
 import { usageSummary, cards } from "../../utils/index.ts";
-
+import HeatMap from './HeatMap'
+import Footer from "../footer.tsx";
 export default function Explorer() {
     const [queryParams] = useSearchParams();
     const { username: paramUsername } = useParams();
@@ -45,8 +46,9 @@ export default function Explorer() {
     return (
         <div className={'bg-cover bg-contain bg-center text-gray-900'} style={{
                  backdropFilter:'blur(10px)',
-                 backgroundImage:`url('/bui.png')`}}>
-               <Nav/>
+            backgroundImage: `url('/bui.png')`,
+        }}>
+            <Nav color={'white'} background="black" />
             <div className={'flex flex-col lg:flex-row gap-[10px] justify-center px-[10px] py-[30px] md:py-[30px] '}>
                 <div className={'w-full lg:w-[700px] shadow-lg hover:scale-101  transform duration-100 transition'}>
                     <div className='relative border-[1px] border-[#07151C] shadow gap-[10px] rounded-[10px] p-[10px] flex justify-between flex-col  focus-within:block shadow-white'>
@@ -97,6 +99,7 @@ export default function Explorer() {
                         <header>
                             <Text>onChain score</Text>
                             <Text>{totalCount}/1000</Text>
+                            <HeatMap />
                         </header>
                         <div className={'py-[10px] w-full md:px-0 gap-[10px] flex flex-col '}>
                             <header className={"flex gap-[10px] items-center cursor"}>
@@ -125,8 +128,9 @@ export default function Explorer() {
                             </div>
                         </div>
                     </div>
-                    <h5 className={'py-[10px] text-[1rem] underline w-full text-center hover:scale-105 transition transform duration-200'} onClick={()=>{setModalOpening(true)}}>Tab to view Profile rating score</h5>
-                    <div className={'flex flex-wrap justify-around items-center gap-[20px] md:gap-y-[40px] py-[15px]'}>
+                    <h5 className={'py-[10px] text-[1rem] underline w-full text-center hover:scale-105 transition transform duration-200'}
+                        onClick={() => { setModalOpening(true) }}>Tab to view Profile rating score</h5>
+                    <div className={'flex flex-wrap justify-start items-start gap-[20px] md:gap-y-[40px] py-[15px]'}>
                         {cards.map((data) => (
                             <Card className={'w-[min(300px,100%)] sm:w-[300px ] md:w-[45%] bg-[#07151C] hover:scale-105 text-white transition transform duration-200'}>
                                 <div
@@ -147,6 +151,7 @@ export default function Explorer() {
                 </Card>
                 <ScoreModal score={'7'} isOpen={isOpeningModal} onClose={()=>{setModalOpening(false)}}/>
             </div>
+            <Footer color='white' background="black" />
         </div>
     )
 }
