@@ -1,4 +1,4 @@
-import { Cards, FaqData, RecentWinners, Names } from "./../types/index";
+import { Cards, FaqData, RecentWinners, Names, CtaItems, Values } from "./../types/index";
 import { AirdropEvent, HackEvent } from "../types";
 
 export const hacksData: HackEvent[] = [
@@ -332,6 +332,22 @@ export const names: Names = {names:[
     "aliphatic.bui.sui",
     "bui.bui.sui",
     "funahhh.bui.sui",
-]
-   
+    ]
 };
+
+export const ctaItems: CtaItems[] = [
+    { href: '/competitions', label: 'Join a Competition' },
+    { href: '/organizer', label: 'List Your Competition' },
+    { href: '/explorer', label: 'Verify Transactions' },
+    { href: '/identity', label: 'Get Your .bui-sui Tag' },
+    { href: '/organizations', label: 'Explore Verified Organizations' },
+    { href: '/overview', label: 'Explore Bui' },
+];
+
+export const values: Values[] = [
+    {date: "2024-01-01", count: 1},
+    {date: "2024-01-02", count: 3},
+    {date: "2024-01-05", count: 5},
+    {date: "2024-01-10", count: 2},
+
+];

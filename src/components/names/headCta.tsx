@@ -1,13 +1,8 @@
 import React from 'react';
 import * as RadixNavigationMenu from '@radix-ui/react-navigation-menu';
+import { ctaItems } from '../../utils';
 
 const HeadCta: React.FC = () => {
-  const ctaItems = [
-    { href: '/competitions', label: 'Join a Competition' },
-    { href: '/organizer', label: 'List Your Competition' },
-    { href: '/explorer', label: 'Verify Transactions' },
-  ];
-
   return (
     <RadixNavigationMenu.Root>
       <RadixNavigationMenu.List style={{

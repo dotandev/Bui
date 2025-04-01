@@ -1,15 +1,8 @@
 import React from 'react';
 import * as RadixNavigationMenu from '@radix-ui/react-navigation-menu';
+import { ctaItems } from '../../utils';
 
 const BuiCta: React.FC = () => {
-  const ctaItems = [
-    { href: '/competitions', label: 'Join a Competition' },
-    { href: '/organizer', label: 'List Your Competition' },
-    { href: '/explorer', label: 'Verify Transactions' },
-    { href: '/identity', label: 'Get Your .bui-sui Tag' },
-    { href: '/organizations', label: 'Explore Verified Organizations' },
-    { href: '/overview', label: 'Explore Bui' },
-  ];
 
   return (
     <RadixNavigationMenu.Root>

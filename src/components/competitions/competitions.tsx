@@ -27,7 +27,7 @@ export default function Competition() {
                                 <Card className={'bg-[#0E778F] text-white'}>
                                     <div className={'w-[100%] h-[150px] border-[#0E778F] rounded-[12px] border-[1px] overflow-hidden'}>
                                         <img src={data.image}
-                                            className={'object-cover object-contain w-full h-full hover:scale-105 transition-all transform duration-400'}
+                                            className={'object-cover, object-contain w-full h-full hover:scale-105 transition-all transform duration-400'}
                                             alt="hack" />
                                     </div>
                                     <div className={'w-full gap-[10px] items-center flex flex-col pt-[10px]'}>

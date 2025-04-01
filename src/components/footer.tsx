@@ -1,9 +1,10 @@
 import React from 'react';
+import { FaTwitter, FaDiscord, FaInstagram, FaEnvelope } from 'react-icons/fa'; // Import icons
 
 const Footer: React.FC = () => {
   return (
     <footer style={{
-      backgroundColor: '#f0f0f0', // Light grey background
+      backgroundColor: '#f0f0f0',
       padding: '40px 20px',
       marginTop: '40px',
       borderTop: '1px solid #e0e0e0',
@@ -32,10 +33,26 @@ const Footer: React.FC = () => {
         <div>
           <h3>Social Media</h3>
           <ul style={{ listStyle: 'none', padding: 0 }}>
-            <li><a href="#" style={linkStyle}>Twitter</a></li>
-            <li><a href="#" style={linkStyle}>Discord</a></li>
-            <li><a href="#" style={linkStyle}>Instagram</a></li>
-            <li><a href="#" style={linkStyle}>Email</a></li>
+            <li>
+              <a href="#" style={linkStyle}>
+                <FaTwitter style={{ marginRight: '5px' }} /> Twitter
+              </a>
+            </li>
+            <li>
+              <a href="#" style={linkStyle}>
+                <FaDiscord style={{ marginRight: '5px' }} /> Discord
+              </a>
+            </li>
+            <li>
+              <a href="#" style={linkStyle}>
+                <FaInstagram style={{ marginRight: '5px' }} /> Instagram
+              </a>
+            </li>
+            <li>
+              <a href="#" style={linkStyle}>
+                <FaEnvelope style={{ marginRight: '5px' }} /> Email
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -81,12 +98,10 @@ const Footer: React.FC = () => {
 const linkStyle: React.CSSProperties = {
   textDecoration: 'none',
   color: '#333',
-  display: 'block',
+  display: 'flex', 
+  alignItems: 'center', 
   padding: '5px 0',
   transition: 'color 0.3s ease',
-//   '&:hover': {
-//     color: '#1890ff',
-//   },
 };
 
 export default Footer;

@@ -9,6 +9,7 @@ import { FaXTwitter, FaDiscord, FaTelegram } from "react-icons/fa6";
 import {UserData} from "../../types";
 import ScoreModal from "./scoreModal.tsx";
 import { usageSummary, cards } from "../../utils/index.ts";
+import { values } from "../../utils/index.ts";
 
 export default function Explorer() {
     const [queryParams] = useSearchParams();
@@ -33,17 +34,12 @@ export default function Explorer() {
             basename: `${username}.base.bui`,
         }));
     }, [queryParams]);
-    const values = [
-        {date: "2024-01-01", count: 1},
-        {date: "2024-01-02", count: 3},
-        {date: "2024-01-05", count: 5},
-        {date: "2024-01-10", count: 2},
-    ];
+
     const totalCount = values.reduce((sum, data) => sum + data.count, 0);
 
 
     return (
-        <div className={'bg-cover bg-contain bg-center text-gray-900'} style={{
+        <div className={'bg-cover, bg-contain, bg-center, text-gray-900'} style={{
                  backdropFilter:'blur(10px)',
                  backgroundImage:`url('/bui.png')`}}>
                <Nav/>

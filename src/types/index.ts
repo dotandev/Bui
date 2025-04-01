@@ -51,3 +51,18 @@ export interface UsageSummary {
 export interface Names{
     names: string[]
 }
+
+export interface CtaItems{
+    href: string;
+    label: string;
+}
+
+export interface Values{
+    date: string;
+    count: number;
+}
+
+export interface CtaItems{
+    href: string;
+    label: string;
+}
