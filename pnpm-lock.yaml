@@ -51,8 +51,8 @@ importers:
         specifier: ^7.4.0
         version: 7.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       swiper:
-        specifier: ^11.2.6
-        version: 11.2.6
+        specifier: ^12.1.2
+        version: 12.1.2
       tailwind-scrollbar:
         specifier: ^4.0.1
         version: 4.0.1(react@18.3.1)(tailwindcss@4.0.15)
@@ -2277,8 +2277,8 @@ packages:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
     engines: {node: '>=8'}
 
-  swiper@11.2.6:
-    resolution: {integrity: sha512-8aXpYKtjy3DjcbzZfz+/OX/GhcU5h+looA6PbAzHMZT6ESSycSp9nAjPCenczgJyslV+rUGse64LMGpWE3PX9Q==}
+  swiper@12.1.2:
+    resolution: {integrity: sha512-4gILrI3vXZqoZh71I1PALqukCFgk+gpOwe1tOvz5uE9kHtl2gTDzmYflYCwWvR4LOvCrJi6UEEU+gnuW5BtkgQ==}
     engines: {node: '>= 4.7.0'}
 
   tailwind-scrollbar@4.0.1:
@@ -4602,7 +4602,7 @@ snapshots:
     dependencies:
       has-flag: 4.0.0
 
-  swiper@11.2.6: {}
+  swiper@12.1.2: {}
 
   tailwind-scrollbar@4.0.1(react@18.3.1)(tailwindcss@4.0.15):
     dependencies:
